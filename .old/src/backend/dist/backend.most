@@ -1,0 +1,68 @@
+// Version: 1.0.0
+type EucharisticMiracle__653561054 =
+  {
+    additionalDetails : ?Text;
+    churchApprovalDate : ?Text;
+    currentLocation : ?Text;
+    description : Text;
+    historicalContext : Text;
+    id : MiracleId__530008262;
+    imageUrls : [Text];
+    location : MiracleLocation__697636245;
+    scientificFindings : ?Text;
+    title : Text;
+    verificationStatus : Text;
+    witnessAccounts : ?Text;
+    year : Nat
+  };
+type EucharisticMiracle__786326967 = EucharisticMiracle__653561054;
+type Id__389469852 = Nat;
+type MiracleId__530008262 = Id__389469852;
+type MiracleLocation__697636245 = {city : Text; country : Text};
+type Nat__490723111 = Nat__920180692;
+type Nat__920180692 = Nat;
+type SacramentCategory__533441623 = {#Healing; #Initiation; #Service};
+type SacramentId__509408607 = Id__389469852;
+type Sacrament__127045029 = Sacrament__416134544;
+type Sacrament__416134544 =
+  {
+    biblicalRoots : Text;
+    category : SacramentCategory__533441623;
+    description : Text;
+    id : SacramentId__509408607;
+    name : Text;
+    spiritualSignificance : Text;
+    symbolImageUrl : Text
+  };
+type SaintId__734529944 = Id__389469852;
+type Saint__471393806 =
+  {
+    biography : Text;
+    feastDay : Text;
+    id : SaintId__734529944;
+    keyFacts : [Text];
+    name : Text;
+    patronage : [Text];
+    portraitImageUrl : Text
+  };
+type Saint__719778929 = Saint__471393806;
+actor {
+  stable miracles :
+    {
+      var blockIndex : Nat__490723111;
+      var blocks : [var [var ?EucharisticMiracle__786326967]];
+      var elementIndex : Nat__490723111
+    };
+  stable sacraments :
+    {
+      var blockIndex : Nat__490723111;
+      var blocks : [var [var ?Sacrament__127045029]];
+      var elementIndex : Nat__490723111
+    };
+  stable saints :
+    {
+      var blockIndex : Nat__490723111;
+      var blocks : [var [var ?Saint__719778929]];
+      var elementIndex : Nat__490723111
+    }
+};

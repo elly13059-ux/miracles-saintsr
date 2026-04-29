@@ -1,0 +1,23 @@
+{
+  "overview": "A Catholic educational website featuring three sections: a Eucharistic Miracles catalog inspired by Carlo Acutis, a Saints profiles section with biographies and feast days, and a Sacraments section explaining all seven sacraments with their spiritual significance.",
+  "features": [
+    "Eucharistic Miracles catalog with detail cards",
+    "Saints profiles with biography and feast days",
+    "Seven Sacraments explained with spiritual context",
+    "Card-based browsing with detail views",
+    "Search and filter for miracles",
+    "Mobile-responsive navigation",
+    "Pre-populated sample content",
+    "Image storage for portraits and miracle photos"
+  ],
+  "category": "education",
+  "tags": [
+    "catholic",
+    "eucharistic-miracles",
+    "saints",
+    "sacraments",
+    "religious-education",
+    "carlo-acutis"
+  ],
+  "last_updated": "2026-04-26T19:10:38.040Z"
+}

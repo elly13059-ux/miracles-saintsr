@@ -1,0 +1,59 @@
+type SaintId = nat;
+type Saint = 
+ record {
+   biography: text;
+   feastDay: text;
+   id: SaintId;
+   keyFacts: vec text;
+   name: text;
+   patronage: vec text;
+   portraitImageUrl: text;
+ };
+type SacramentId = nat;
+type SacramentCategory = 
+ variant {
+   Healing;
+   Initiation;
+   Service;
+ };
+type Sacrament = 
+ record {
+   biblicalRoots: text;
+   category: SacramentCategory;
+   description: text;
+   id: SacramentId;
+   name: text;
+   spiritualSignificance: text;
+   symbolImageUrl: text;
+ };
+type MiracleLocation = 
+ record {
+   city: text;
+   country: text;
+ };
+type MiracleId = nat;
+type EucharisticMiracle = 
+ record {
+   additionalDetails: opt text;
+   churchApprovalDate: opt text;
+   currentLocation: opt text;
+   description: text;
+   historicalContext: text;
+   id: MiracleId;
+   imageUrls: vec text;
+   location: MiracleLocation;
+   scientificFindings: opt text;
+   title: text;
+   verificationStatus: text;
+   witnessAccounts: opt text;
+   year: nat;
+ };
+service : {
+  getMiracle: (id: MiracleId) -> (opt EucharisticMiracle) query;
+  getMiraclesByCountry: (country: text) -> (vec EucharisticMiracle) query;
+  getSacrament: (id: SacramentId) -> (opt Sacrament) query;
+  getSaint: (id: SaintId) -> (opt Saint) query;
+  listMiracles: () -> (vec EucharisticMiracle) query;
+  listSacraments: () -> (vec Sacrament) query;
+  listSaints: () -> (vec Saint) query;
+}
